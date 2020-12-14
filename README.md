@@ -149,4 +149,13 @@ Types of attack :
 - Watching out for phishing scams
 ![Prevent Man In The Middle Attack](https://dpsvdv74uwwos.cloudfront.net/statics/img/ogimage/man-in-the-middle-attack-how-avoid.png)
 
+
+ ### Cross Site Scripting (XSS)
+Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script
+![ Cross Site Scripting ](https://avinetworks.com/wp-content/uploads/2020/09/cross-site-scripting-diagram.png)
+#### How to prevent XSS attacks
+ - Filter input on arrival. At the point where user input is received, filter as strictly as possible based on what is expected or valid input.
+ - Encode data on output. At the point where user-controllable data is output in HTTP responses, encode the output to prevent it from being interpreted as active content. Depending on the output context, this might require applying combinations of HTML, URL, JavaScript, and CSS encoding.
+ - Use appropriate response headers. To prevent XSS in HTTP responses that aren't intended to contain any HTML or JavaScript, you can use the Content-Type and X-Content-Type-Options headers to ensure that browsers interpret the responses in the way you intend.
+ - Content Security Policy. As a last line of defense, you can use Content Security Policy (CSP) to reduce the severity of any XSS vulnerabilities that still occur.
  
