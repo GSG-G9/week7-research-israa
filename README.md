@@ -88,4 +88,44 @@ Statefull session :
       - Can lead to a performance decrease if session storage is not maintained efficiently.
 
 
+## Session-management in Express
+### What are sessions?
+A session can be defined as a server-side storage of information that is desired to persist throughout the user's interaction with the web site or web application. 
+
+Instead of storing large and constantly changing information via cookies in the user's browser, only a unique identifier is stored on the client side (called a "session id"). This session id is passed to the web server every time the browser makes an HTTP request . The web application pairs this session id with it's internal database and retrieves the stored variables for use by the requested page.
+
+### What are the different ways of managing sessions in express?
+  - use express session 
+```js
+const express = require('express');
+const session = require('express-session');
+const app = express();
+```
+then 
+
+```js
+app.use(session({secret: 'ssshhhhh'}));
+```
+full example here :
+https://codeforgeek.com/manage-session-using-node-js-express-4/
+
+In nodejs 
+- client session : client-sessions is connect middleware that implements sessions in encrypted tamper-free cookies.
+for more details refer to the documentation here https://www.npmjs.com/package/cookie-session
+
+ 
+### Create a minimal example of how to set up a session (FYI: pseudo code is fine)
+```js
+- install express-session --> npm install express-session
+- in server.js file do the following :
+const express = require('express');
+const session = require('express-session');
+const app = express();
+- After this, we have to initialize the session and we can do this by using following
+app.use(session({secret: 'ssshhhhh'})); // Here ‘secret‘ is used for cookie handling
+-  using ‘request‘ variable you can assign session to any variable.
+
+```
+
+
  
