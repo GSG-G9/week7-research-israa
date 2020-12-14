@@ -10,6 +10,8 @@
     - HTTP is considered to be unsecure and HTTPS is secure
     - HTTP Works at Application Layer and HTTPS works at Transport Layer
     - HTTP does not require any certificates and HTTPS needs SSL Certificates
+    ![HTTP vs HTTPS](https://seopressor.com/wp-content/uploads/2017/07/Difference-Between-HTTP-and-HTTPS.png)
+    
 ### How does HTTPS work? What are TLS/SSL certificates?
 HTTPs encrypts the data unlike HTTP which sends the data as plaintext.HTTPS secures the connection using SSL cirtificate.
 - What is SSl ?
@@ -20,6 +22,10 @@ TLS  using a tichnique known as  TLS handshake ,this ensures three things :
     - ensure data has not been tampered with since it was sent and this means ensures integrity of data.
     - ensures that communications are with the actual person the communication came from and this means ensures authentication.
     - prevent private data from being seen and this\ done by encryption.
+    
+     ![public and private key](https://blogs.akamai.com/assets_c/2016/02/SSL-TLS%20Primer%20IMG%202-thumb-500xauto-4853.png)
+    
+    
     
 ### Why is this important to implement in your projects?
 HTTPS  is important in projects because it protects all communication and customer information. HTTPS also works to legitimize any site that uses it because businesses that use HTTPS can be verified. In the case of any e-commerce site, in particular, customers will feel safer shopping there.
