@@ -127,5 +127,26 @@ app.use(session({secret: 'ssshhhhh'})); // Here ‘secret‘ is used for cookie 
 
 ```
 
+## Attacks
+
+### Man In The Middle (MITM)
+is a cyberattack where the attacker secretly relays and possibly alters the communications between two parties who believe that they are directly communicating with each other.
+The goal of an attack is to steal personal information, such as login credentials, account details and credit card numbers.
+
+![Man In The Middle Attack](https://phoenixnap.com/blog/wp-content/uploads/2019/03/how-man-in-middle-works-min.png)
+
+Types of attack :
+- IP spoofing
+- Email hijacking
+- HTTPS spoofing
+- Wi-Fi eavesdropping
+
+#### How to prevent man-in-the-middle attacks?
+ - don’t use public networks.
+ - Secure your e-mails by employing SSL/TLS.
+ - Using a VPN : a VPN (virtual private network) encrypt the data as it’s being transmitted over the Internet. This doesn’t make you impenetrable to MITM attacks, but it makes life much harder for crooks.
+ - Only visiting HTTPS websites : As with VPNs, HTTPS websites encrypt data and prevent attackers from intercepting communications.
+- Watching out for phishing scams
+![Prevent Man In The Middle Attack](https://dpsvdv74uwwos.cloudfront.net/statics/img/ogimage/man-in-the-middle-attack-how-avoid.png)
 
  
