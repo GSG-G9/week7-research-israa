@@ -50,4 +50,42 @@ https.createServer(options, app).listen(8080); // create server using HTTPS and 
 ```
 
 
+## Stateless vs stateful authentication
+### What is session based authentication (stateful) vs token based authentication (stateless)?
+  - session based authentication (stateful) : , the server will create a session for the user after the user logs in. The session id is then stored on a cookie on the user’s browser. While the user stays logged in, the cookie would be sent along with every subsequent request. The server can then compare the session id stored on the cookie against the session information stored in the database to verify user’s identity and sends response with the corresponding state.
+
+- token based application, the server creates JWT with a secret and sends the JWT to the client. The client stores the JWT  in browser and includes JWT in the header with every request. The server would then validate the JWT with every request from the client and sends response.
+
+- The main difference between session and token based autentication is that in session the session stored in the database while in the token the user state stored in the browser.
+
+### Draw flow diagrams to show the steps involved in each process
+session based authentication diagram 
+
+![Stateful session diagrams](https://miro.medium.com/max/3000/1*Hg1gUTXN5E3Nrku0jWCRow.png)
+
+token based authentication diagram 
+
+![Stateless token diagrams](https://miro.medium.com/max/3000/1*PDry-Wb8JRquwnikIbJOJQ.png)
+
+
+### What are the advantages and disadvantages of each?
+Stateless session :
+   - advantages:
+      - Reduces memory usage
+      - Reduces session expiration issue
+
+   - disadvantages:
+      - Harder to maintain user interaction and create a seamless web application.
+      - May require extra information to be sent to and from a client.
+Statefull session :
+   - advantages:
+      - Keep track of a user throughout a web application/site
+      - More intuitive - Entity data can be maintained on the server between requests.
+      - Can sometimes improve performance when retrieval of data is only required once.
+
+   - disadvantages:
+      - Requires memory to be allocated to store the data.
+      - Can lead to a performance decrease if session storage is not maintained efficiently.
+
+
  
