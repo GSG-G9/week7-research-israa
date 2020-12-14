@@ -159,3 +159,21 @@ Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious s
  - Use appropriate response headers. To prevent XSS in HTTP responses that aren't intended to contain any HTML or JavaScript, you can use the Content-Type and X-Content-Type-Options headers to ensure that browsers interpret the responses in the way you intend.
  - Content Security Policy. As a last line of defense, you can use Content Security Policy (CSP) to reduce the severity of any XSS vulnerabilities that still occur.
  
+ 
+ ### Cross Site Request Forgery (CSRF)
+Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. With a little help of social engineering (such as sending a link via email or chat), an attacker may trick the users of a web application into executing actions of the attacker’s choosing. If the victim is a normal user, a successful CSRF attack can force the user to perform state changing requests like transferring funds, changing their email address, and so forth. If the victim is an administrative account, CSRF can compromise the entire web application.
+![ Cross Site Request Forgery ](https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/csrf-cross-site-request-forgery.png)
+
+#### How to prevent Cross Site Request Forgery (CSRF)
+- ##### Implement an Anti-CSRF Token :
+An anti-CSRF token is a type of server-side CSRF protection. It is a random string that is only known to the user’s browser and the web application. The anti-CSRF token is usually stored inside a session variable. On a page, it is typically in a hidden field that is sent with the request.If the values of the session variable and the hidden form field match, the web application accepts the request.
+![ Anti-CSRF Token ](https://secumantra.com/wp-content/uploads/2020/06/csrf-token-1-1024x536.png)
+ - ##### Use the SameSite Flag in Cookies
+If the session cookie is marked as a SameSite cookie, it is only sent along with requests that originate from the same domain.
+![ SameSite Flag in Cookies]( https://www.tarlogic.com/wp-content/uploads/2017/02/SameSite-e1487712634566.png )
+
+ - ##### Using the double submit cookie strategy
+the server stores the matching token's value in a cookie instead of keeping it in the server session. It sends the CSRF token's value to the browser in the hidden field and in the cookie. When the server receives a request, it just needs to check if the cookie's value and the hidden field value match.
+![ the double submit cookie ]( https://miro.medium.com/max/1186/1*xjgB7dRyTCfvG5IlUuFwTw.png)
+
+ 
